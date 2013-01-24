@@ -25,6 +25,12 @@ public class Main {
     System.out.print("The largest prime factor of 600851475143 = ");
     System.out.println(net.euler.Problem003.largestPrimeFactorOf(new BigInteger("600851475143")));
 
+    System.out.println("Problem #004");
+    System.out.println("============");
+    System.out.print("The largest palindromic product of 3-digit numbers is = ");
+    System.out.println(net.euler.Problem004.largestPalindromeProduct(1000));
+
+
   }
 
 }
