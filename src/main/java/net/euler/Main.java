@@ -1,5 +1,7 @@
 package net.euler;
 
+import java.math.BigInteger;
+
 /**
  * User: Alexandros Bantis
  * Date: 1/23/13
@@ -18,7 +20,10 @@ public class Main {
     System.out.print("The sum of even Fibonacci numbers that do not exceed 4 million = ");
     System.out.println(net.euler.Problem002.sumEvenFiboNumbersTo(4000000));
 
-
+    System.out.println("Problem #003");
+    System.out.println("============");
+    System.out.print("The largest prime factor of 600851475143 = ");
+    System.out.println(net.euler.Problem003.largestPrimeFactorOf(new BigInteger("600851475143")));
 
   }
 
