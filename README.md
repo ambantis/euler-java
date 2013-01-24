@@ -1,0 +1,1 @@
+my solutions in java for euler problems.
