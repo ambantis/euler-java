@@ -1,5 +1,6 @@
 package net.euler;
 
+import static net.euler.Problem001.sumMultiplesOf3And5;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -17,7 +18,7 @@ public class Problem001Test {
   public void testSumMultiplesOf3And5ForTen() {
     int ceiling = 10;
     int expectedResult = 23;
-    int actualResult = net.euler.Problem001.sumMultiplesOf3And5(ceiling);
+    int actualResult = sumMultiplesOf3And5(ceiling);
     assertEquals("failure - should equal 23", expectedResult, actualResult);
   }
 }
