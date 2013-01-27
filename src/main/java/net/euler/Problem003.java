@@ -1,6 +1,5 @@
 package net.euler;
 
-import java.math.BigInteger;
 import java.util.LinkedList;
 
 /**
@@ -14,36 +13,36 @@ import java.util.LinkedList;
  */
 public class Problem003 {
 
-  private static LinkedList<BigInteger> factors;
+  private static LinkedList<Long> factors;
 
-  private static BigInteger bigIntRoughRoot(BigInteger number) {
-    BigInteger i = BigInteger.ONE;
-    while (number.compareTo(i.pow(2)) > 0)
-      i = i.add(BigInteger.ONE);
+  private static Long roughRoot(Long number) {
+    Long i;
+    for (i = 1L; i * i < number; i++) {}
     return i;
   }
 
-  private static void initializePrimeFactorList(BigInteger number) {
-    BigInteger i = new BigInteger("2");
-    BigInteger ceiling = bigIntRoughRoot(number);
-    BigInteger rem = number;
-    factors = new LinkedList<BigInteger>();
-    while (i.compareTo(ceiling) < 0) {
-      if (rem.mod(i).equals(BigInteger.ZERO)) {
+  private static void initializePrimeFactorList(Long number) {
+    Long i = 2L;
+    Long ceiling = roughRoot(number);
+    Long rem = number;
+    factors = new LinkedList<Long>();
+    while (i < ceiling) {
+      if (rem % i == 0) {
         factors.add(i);
-        rem = rem.divide(i);
+        rem /= i;
       } else {
-        i = i.add(BigInteger.ONE);
+        i++;
       }
     }
   }
 
-  public static int largestPrimeFactorOf(BigInteger number) {
+  public static Long largestPrimeFactorOf(Long number) {
     initializePrimeFactorList(number);
-    BigInteger result = BigInteger.ZERO;
-    for (BigInteger bigInteger : factors)
-      result = result.max(bigInteger);
-    return result.intValue();
+    Long result = 0L;
+    for (Long factor : factors)
+      if (factor > result)
+        result = factor;
+    return result;
   }
 
 }

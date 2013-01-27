@@ -4,8 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.math.BigInteger;
-
 import static org.junit.Assert.assertEquals;
 import static net.euler.Problem003.largestPrimeFactorOf;
 
@@ -18,9 +16,9 @@ import static net.euler.Problem003.largestPrimeFactorOf;
 public class Problem003Test {
   @Test
   public void testLargestPrimeFactorOf13195() {
-    BigInteger number = new BigInteger("13195");
-    int expectedResult = 29;
-    int actualResult = largestPrimeFactorOf(number);
+    Long number = 13195L;
+    Long expectedResult = 29L;
+    Long actualResult = largestPrimeFactorOf(number);
     assertEquals("failure - should equal 29 but actual result is " + actualResult, expectedResult, actualResult);
   }
 }
