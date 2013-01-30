@@ -1,10 +1,10 @@
 package net.euler;
-import net.euler.Stopwatch.*;
+
 import static net.euler.Problem001.*;
 import static net.euler.Problem002.*;
 import static net.euler.Problem003.*;
 import static net.euler.Problem004.*;
-
+import static net.euler.Problem005.*;
 
 /**
  * User: Alexandros Bantis
@@ -49,6 +49,18 @@ public class Main {
     System.out.print("The largest palindromic product of 3-digit numbers is = ");
     System.out.print(largestPalindromeProductOutput);
     System.out.println(" with a time of " + largestPalindromeProductTime + " seconds.\n ");
+
+    Stopwatch stopwatch005 = new Stopwatch();
+    int highestMultiple = 20;
+    int findSmallestMultipleOutput = findSmallestMultiple(20);
+    double findSmallestMultipleTime = stopwatch005.elapsedTime();
+    System.out.println("Problem #005");
+    System.out.println("============");
+    System.out.print("The multiple of the numbers 1-" + highestMultiple + " is = ");
+    System.out.print(findSmallestMultipleOutput);
+    System.out.println(" with a time of " + findSmallestMultipleTime + " seconds.\n ");
+
+
   }
 
 }
