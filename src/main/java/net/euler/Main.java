@@ -21,7 +21,7 @@ public class Main {
     System.out.println("============");
     System.out.print("The sum of all the multiples of 3 or 5 below 1000 = ");
     System.out.print(sumMultiplesOutput);
-    System.out.println(" with a time of " + sumMultiplesTime + " seconds.\n");
+    System.out.println(" with a time of " + sumMultiplesTime + " milliseconds.\n");
 
     Stopwatch stopwatch002 = new Stopwatch();
     int sumFiboNumbersOutput = sumEvenFiboNumbersTo(4000000);
@@ -30,7 +30,7 @@ public class Main {
     System.out.println("============");
     System.out.print("The sum of even Fibonacci numbers that do not exceed 4 million = ");
     System.out.print(sumFiboNumbersOutput);
-    System.out.println(" with a time of " + sumFiboNumbersTime + " seconds.\n");
+    System.out.println(" with a time of " + sumFiboNumbersTime + " milliseconds.\n");
 
     Stopwatch stopwatch003 = new Stopwatch();
     Long largestPrimeFactorOutput = largestPrimeFactorOf(600851475143L);
@@ -39,7 +39,7 @@ public class Main {
     System.out.println("============");
     System.out.print("The largest prime factor of 600851475143 = ");
     System.out.print(largestPrimeFactorOutput);
-    System.out.println(" with a time of " + largestPrimeFactorTime + " seconds.\n");
+    System.out.println(" with a time of " + largestPrimeFactorTime + " milliseconds.\n");
 
     Stopwatch stopwatch004 = new Stopwatch();
     int largestPalindromeProductOutput = largestPalindromeProduct(1000);
@@ -48,17 +48,26 @@ public class Main {
     System.out.println("============");
     System.out.print("The largest palindromic product of 3-digit numbers is = ");
     System.out.print(largestPalindromeProductOutput);
-    System.out.println(" with a time of " + largestPalindromeProductTime + " seconds.\n ");
+    System.out.println(" with a time of " + largestPalindromeProductTime + " milliseconds.\n ");
 
-    Stopwatch stopwatch005 = new Stopwatch();
+    Stopwatch stopwatch005a = new Stopwatch();
     int highestMultiple = 20;
-    int findSmallestMultipleOutput = findSmallestMultiple(20);
-    double findSmallestMultipleTime = stopwatch005.elapsedTime();
-    System.out.println("Problem #005");
+    int findSmallestMultipleBruteOutput = findSmallestMultipleBruteForce(highestMultiple);
+    double findSmallestMultipleTime = stopwatch005a.elapsedTime();
+    System.out.println("Problem #005a");
     System.out.println("============");
-    System.out.print("The multiple of the numbers 1-" + highestMultiple + " is = ");
-    System.out.print(findSmallestMultipleOutput);
-    System.out.println(" with a time of " + findSmallestMultipleTime + " seconds.\n ");
+    System.out.print("Using Brute Force, the multiple of the numbers 1-" + highestMultiple + " is = ");
+    System.out.print(findSmallestMultipleBruteOutput);
+    System.out.println(" with a time of " + findSmallestMultipleTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch005b = new Stopwatch();
+    int findSmallestMultipleElegantOutput = findSmallestMultipleElegant(highestMultiple);
+    double findSmallestMultipleElegantTime = stopwatch005b.elapsedTime();
+    System.out.println("Problem #005b");
+    System.out.println("============");
+    System.out.print("Using Elegance Force, the multiple of the numbers 1-" + highestMultiple + " is = ");
+    System.out.print(findSmallestMultipleElegantOutput);
+    System.out.println(" with a time of " + findSmallestMultipleElegantTime + " milliseconds.\n ");
 
 
   }

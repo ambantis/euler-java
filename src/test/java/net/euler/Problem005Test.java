@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import static org.junit.Assert.assertEquals;
-import static net.euler.Problem005.findSmallestMultiple;
+import static net.euler.Problem005.findSmallestMultipleBruteForce;
 
 /**
  * User: Alexandros Bantis
@@ -16,7 +16,7 @@ public class Problem005Test {
   @Test
   public void testFindSmallestMultiple() {
     int expectedResult = 2520;
-    int actualResult = findSmallestMultiple(10);
+    int actualResult = findSmallestMultipleBruteForce(10);
     assertEquals("failure - should equal 2520", expectedResult, actualResult);
   }
 }
