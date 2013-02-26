@@ -61,7 +61,7 @@ public class Main {
     System.out.println(" with a time of " + findSmallestMultipleTime + " milliseconds.\n ");
 
     Stopwatch stopwatch005b = new Stopwatch();
-    int findSmallestMultipleElegantOutput = findSmallestMultipleElegant(highestMultiple);
+    int findSmallestMultipleElegantOutput = findSmallestMultiple(highestMultiple);
     double findSmallestMultipleElegantTime = stopwatch005b.elapsedTime();
     System.out.println("Problem #005b");
     System.out.println("============");
@@ -69,7 +69,26 @@ public class Main {
     System.out.print(findSmallestMultipleElegantOutput);
     System.out.println(" with a time of " + findSmallestMultipleElegantTime + " milliseconds.\n ");
 
+    Stopwatch stopwatch006 = new Stopwatch();
+    long sumSquareDifferenceTo = 100;
+    Problem006 problem006 = new Problem006(sumSquareDifferenceTo);
+    long sumSquareDifferenceOutput = problem006.calc();
+    double sumSquareDifferenceTime = stopwatch006.elapsedTime();
+    System.out.println("Problem #006");
+    System.out.println("============");
+    System.out.print("The sum square difference of 1 to " + sumSquareDifferenceTo + " is = ");
+    System.out.print(sumSquareDifferenceOutput);
+    System.out.println(" with a time of " + sumSquareDifferenceTime + " milliseconds.\n ");
 
+    Stopwatch stopwatch007 = new Stopwatch();
+    int nthPrimeCount = 10001;
+    Problem007 problem007 = new Problem007();
+    long nthPrimeOutput = problem007.nthPrime(nthPrimeCount);
+    double nthPrimeTime = stopwatch007.elapsedTime();
+    System.out.println("Problem #007");
+    System.out.println("============");
+    System.out.print("The " + nthPrimeCount + "th is = ");
+    System.out.print(nthPrimeOutput);
+    System.out.println(" with a time of " + nthPrimeTime + " milliseconds.\n ");
   }
-
 }

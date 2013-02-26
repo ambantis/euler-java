@@ -15,23 +15,6 @@ public class Problem005 {
   final private static int CROSSED_OUT = 0;
   final private static int NOT_CROSSED_OUT = 1;
 
-  // brute force method
-  private static boolean isDivisibleByAll(int n, int ceiling) {
-    for (int i = 1; i < ceiling; i++)
-      if (n % i != 0)
-        return false;
-    return true;
-  }
-
-  // brute force method
-  public static int findSmallestMultipleBruteForce (int ceiling) {
-    int number = 1;
-    while (!isDivisibleByAll(number, ceiling))
-      number++;
-    return number;
-  }
-
-
   private static int intPow(int base, int exponent) {
     int value = 1;
     for (int i = 0; i < exponent; i++)
@@ -40,8 +23,7 @@ public class Problem005 {
   }
 
   /**
-   * primesTo returns all primes numbers up to n using trial by division algorithm
-   *
+   * primesTo computes all primes numbers up to n using trial by division algorithm
    *
    * @param n designates primes should be in the range 2 ... n
    * @return int[] a sieve of all prime factors (0=CROSSED_OUT, 1=NOT_CROSSED_OUT)
@@ -63,12 +45,13 @@ public class Problem005 {
 
 
   /**
-   * getPrimeExp returns a prime factorization array
+   * getPrimeExp computes a prime factorization of n
+   *
    * @param n the number subject to prime factorization
    * @return int[] an array of exponents for prime factors of n
    *               e.g., 8 => (0^0, 1^0, 2^3, 3^0, 4^0, 5^0, 6^0, 7^0, 8^0)
    */
-  private static int[] getPrimeExp(int n) {
+  public static int[] getPrimeExp(int n) {
     int[] factor = primesTo(n);
     int[] primePowAll = new int[n+1];
 
@@ -89,7 +72,13 @@ public class Problem005 {
     return primePowAll;
   }
 
-  public static int findSmallestMultipleElegant(int n) {
+  /**
+   * findSmallestMultiple computes the smallest number evenly divisible by all numbers 1 to n
+   *
+   * @param n the top of the range
+   * @return int evenly divisible by all numbers 1 to n
+   */
+  public static int findSmallestMultiple(int n) {
     int[] gcfAll = new int[n+1];
 
     // populate greatest common factor arrays
@@ -111,5 +100,24 @@ public class Problem005 {
     }
     return value;
   }
+
+  // brute force method
+  private static boolean isDivisibleByAll(int n, int ceiling) {
+    for (int i = 1; i < ceiling; i++)
+      if (n % i != 0)
+        return false;
+    return true;
+  }
+
+  // brute force method
+  public static int findSmallestMultipleBruteForce (int ceiling) {
+    int number = 1;
+    while (!isDivisibleByAll(number, ceiling))
+      number++;
+    return number;
+  }
+
+
+
 
 }
