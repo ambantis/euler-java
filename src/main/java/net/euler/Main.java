@@ -50,22 +50,13 @@ public class Main {
     System.out.print(largestPalindromeProductOutput);
     System.out.println(" with a time of " + largestPalindromeProductTime + " milliseconds.\n ");
 
-    Stopwatch stopwatch005a = new Stopwatch();
+    Stopwatch stopwatch005 = new Stopwatch();
     int highestMultiple = 20;
-    int findSmallestMultipleBruteOutput = findSmallestMultipleBruteForce(highestMultiple);
-    double findSmallestMultipleTime = stopwatch005a.elapsedTime();
-    System.out.println("Problem #005a");
-    System.out.println("============");
-    System.out.print("Using Brute Force, the multiple of the numbers 1-" + highestMultiple + " is = ");
-    System.out.print(findSmallestMultipleBruteOutput);
-    System.out.println(" with a time of " + findSmallestMultipleTime + " milliseconds.\n ");
-
-    Stopwatch stopwatch005b = new Stopwatch();
     int findSmallestMultipleElegantOutput = findSmallestMultiple(highestMultiple);
-    double findSmallestMultipleElegantTime = stopwatch005b.elapsedTime();
-    System.out.println("Problem #005b");
+    double findSmallestMultipleElegantTime = stopwatch005.elapsedTime();
+    System.out.println("Problem #005");
     System.out.println("============");
-    System.out.print("Using Elegance Force, the multiple of the numbers 1-" + highestMultiple + " is = ");
+    System.out.print("Using Elegance, the multiple of the numbers 1-" + highestMultiple + " is = ");
     System.out.print(findSmallestMultipleElegantOutput);
     System.out.println(" with a time of " + findSmallestMultipleElegantTime + " milliseconds.\n ");
 
@@ -90,5 +81,51 @@ public class Main {
     System.out.print("The " + nthPrimeCount + "th is = ");
     System.out.print(nthPrimeOutput);
     System.out.println(" with a time of " + nthPrimeTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch008 = new Stopwatch();
+    Problem008 problem008 = new Problem008();
+    int maxProductOutput = problem008.largestProduct();
+    double maxProductTime = stopwatch008.elapsedTime();
+    System.out.println("Problem #008");
+    System.out.println("============");
+    System.out.print("The max product of the string is = ");
+    System.out.print(maxProductOutput);
+    System.out.println(" with a time of " + maxProductTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch009 = new Stopwatch();
+    Problem009 problem009 = new Problem009();
+    int pythagoreanTripletOutput = problem009.tripletProduct();
+    double pythagoreanTripletTime = stopwatch009.elapsedTime();
+    System.out.println("Problem #009");
+    System.out.println("============");
+    System.out.print("The pythagorean triplet product where sum of sides is 1000 = ");
+    System.out.print(pythagoreanTripletOutput);
+    System.out.println(" with a time of " + pythagoreanTripletTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch010 = new Stopwatch();
+    int ceiling = 2000000;
+    Problem010 problem010 = new Problem010(ceiling);
+    long primeSumOutput = problem010.sumPrimes();
+    double primeSumTime = stopwatch010.elapsedTime();
+    System.out.println("Problem #010");
+    System.out.println("============");
+    System.out.print("The sum of primes below " + ceiling + " = ");
+    System.out.print(primeSumOutput);
+    System.out.println(" with a time of " + primeSumTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch011 = new Stopwatch();
+    Problem011 problem011 = new Problem011();
+    int gridMaxOutput = problem011.calcAllMax();
+    double gridMaxTime = stopwatch011.elapsedTime();
+    System.out.println("Problem #011");
+    System.out.println("============");
+    System.out.print("The greatest product of four adjacent numbers in the matrix = ");
+    System.out.print(gridMaxOutput);
+    System.out.println(" with a time of " + gridMaxTime + " milliseconds.\n ");
+    System.out.println("top-left = " + problem011.topLeft());
+    System.out.println("top-right = " + problem011.topRight());
+    System.out.println("bottom-left = " + problem011.bottomLeft());
+    System.out.println("bottom-right = " + problem011.bottomRight());
+
   }
 }
