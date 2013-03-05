@@ -1,5 +1,7 @@
 package net.euler;
 
+import java.math.BigInteger;
+
 import static net.euler.Problem001.*;
 import static net.euler.Problem002.*;
 import static net.euler.Problem003.*;
@@ -122,10 +124,15 @@ public class Main {
     System.out.print("The greatest product of four adjacent numbers in the matrix = ");
     System.out.print(gridMaxOutput);
     System.out.println(" with a time of " + gridMaxTime + " milliseconds.\n ");
-    System.out.println("top-left = " + problem011.topLeft());
-    System.out.println("top-right = " + problem011.topRight());
-    System.out.println("bottom-left = " + problem011.bottomLeft());
-    System.out.println("bottom-right = " + problem011.bottomRight());
 
+    Stopwatch stopwatch012 = new Stopwatch();
+    Problem012 problem012 = new Problem012();
+    long triangleNumberOutput = problem012.getNaturalNumberWith(500);
+    double triangleNumberTime = stopwatch012. elapsedTime();
+    System.out.println("Problem #012");
+    System.out.println("============");
+    System.out.print("The first triangle number with over 500 divisors = ");
+    System.out.print(triangleNumberOutput);
+    System.out.println(" with a time of " + triangleNumberTime + " milliseconds.\n ");
   }
 }
