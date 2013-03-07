@@ -128,11 +128,32 @@ public class Main {
     Stopwatch stopwatch012 = new Stopwatch();
     Problem012 problem012 = new Problem012();
     long triangleNumberOutput = problem012.getNaturalNumberWith(500);
-    double triangleNumberTime = stopwatch012. elapsedTime();
+    double triangleNumberTime = stopwatch012.elapsedTime();
     System.out.println("Problem #012");
     System.out.println("============");
     System.out.print("The first triangle number with over 500 divisors = ");
     System.out.print(triangleNumberOutput);
     System.out.println(" with a time of " + triangleNumberTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch013 = new Stopwatch();
+    Problem013 problem013 = new Problem013();
+    String bigSumOutput = problem013.firstTen();
+    double bigSumTime = stopwatch013.elapsedTime();
+    System.out.println("Problem #013");
+    System.out.println("============");
+    System.out.println("The first ten digits of the big sum = " + bigSumOutput);
+    System.out.println(" with a time of " + bigSumTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch014 = new Stopwatch();
+    int collatzSeqLength = 1000000;
+    Problem014 problem014 = new Problem014();
+    long collatzOutput = problem014.getMaxCollatz(collatzSeqLength);
+    double collatzTime = stopwatch014.elapsedTime();
+    System.out.println("Problem #014");
+    System.out.println("============");
+    System.out.println("The max Collatz sequence to " + collatzSeqLength + " = " + collatzOutput);
+    System.out.println(" with a time of " + collatzTime + " milliseconds.\n ");
+
+
   }
 }
