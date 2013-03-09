@@ -24,8 +24,8 @@ public class Problem014 {
   public int getMaxCollatz(int ceiling) {
     int maxSeqLength = 0;
     int maxN = 0;
-    int currentCollatzSeqLength = 0;
-    for (int i = 1; i < ceiling; i++) {
+    int currentCollatzSeqLength;
+    for (int i = 1; i < ceiling; i += 2) {
       currentCollatzSeqLength = getCollatzSequenceLength(i);
       if (currentCollatzSeqLength > maxSeqLength) {
         maxSeqLength = currentCollatzSeqLength;
@@ -35,7 +35,8 @@ public class Problem014 {
     return maxN;
   }
 
-  public int getCollatzSequenceLength(long n) {
+  public int getCollatzSequenceLength(int number) {
+    long n = number;
     int terms = 1;
     while (n != 1) {
       terms++;
