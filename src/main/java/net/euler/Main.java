@@ -154,6 +154,14 @@ public class Main {
     System.out.println("The max Collatz sequence to " + collatzSeqLength + " = " + collatzOutput);
     System.out.println(" with a time of " + collatzTime + " milliseconds.\n ");
 
-
+    Stopwatch stopwatch015 = new Stopwatch();
+    long size = 20;
+    Problem015 problem015 = new Problem015();
+    long latticeOutput = problem015.latticePaths(size);
+    double latticeTime = stopwatch015.elapsedTime();
+    System.out.println("Problem #015");
+    System.out.println("============");
+    System.out.println("The number of paths for a lattice of " + size + "x" + size + " = " + latticeOutput);
+    System.out.println(" with a time of " + latticeTime + " milliseconds.\n ");
   }
 }
