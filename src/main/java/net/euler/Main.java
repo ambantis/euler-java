@@ -1,7 +1,5 @@
 package net.euler;
 
-import java.math.BigInteger;
-
 import static net.euler.Problem001.*;
 import static net.euler.Problem002.*;
 import static net.euler.Problem003.*;
@@ -163,5 +161,27 @@ public class Main {
     System.out.println("============");
     System.out.println("The number of paths for a lattice of " + size + "x" + size + " = " + latticeOutput);
     System.out.println(" with a time of " + latticeTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch016 = new Stopwatch();
+    int exponent = 1000;
+    Problem016 problem016 = new Problem016();
+    long powerDigitSumOutput = problem016.sumOfDigits(problem016.bigNumberString(exponent));
+    double powerDigitSumTime = stopwatch016.elapsedTime();
+    System.out.println("Problem #016");
+    System.out.println("============");
+    System.out.println("The sum of digits of 2^1000 = " + powerDigitSumOutput);
+    System.out.println(" with a time of " + powerDigitSumTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch017 = new Stopwatch();
+    ceiling = 1000;
+    Problem017 problem017 = new Problem017();
+    long letterCountsOutput = problem017.numberLetterCountsTo(ceiling);
+    double letterCountsTime = stopwatch017.elapsedTime();
+    System.out.println("Problem #017");
+    System.out.println("============");
+    System.out.println("The number-letter counts for integers 1 to " + ceiling + " = " + letterCountsOutput);
+    System.out.println(" with a time of " + letterCountsTime + " milliseconds.\n ");
+
+
   }
 }
