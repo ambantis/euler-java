@@ -182,6 +182,14 @@ public class Main {
     System.out.println("The number-letter counts for integers 1 to " + ceiling + " = " + letterCountsOutput);
     System.out.println(" with a time of " + letterCountsTime + " milliseconds.\n ");
 
+    Stopwatch stopwatch019 = new Stopwatch();
+    Problem019 problem019 = new Problem019();
+    long countSundaysOutput = problem019.calcSundays();
+    double countSundaysTime = stopwatch019.elapsedTime();
+    System.out.println("Problem #019");
+    System.out.println("============");
+    System.out.println("The number of Sundays in the 20th Century = " + countSundaysOutput);
+    System.out.println(" with a time of " + countSundaysTime + " milliseconds.\n ");
 
   }
 }

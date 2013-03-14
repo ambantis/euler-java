@@ -1,7 +1,5 @@
 package net.euler;
 
-import java.util.ArrayList;
-
 /**
  * Lattice Paths
  *
