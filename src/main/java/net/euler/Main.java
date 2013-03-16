@@ -191,5 +191,14 @@ public class Main {
     System.out.println("The number of Sundays in the 20th Century = " + countSundaysOutput);
     System.out.println(" with a time of " + countSundaysTime + " milliseconds.\n ");
 
+    Stopwatch stopwatch020 = new Stopwatch();
+    Problem020 problem020 = new Problem020();
+    long factorialDigitSumOutput = problem020.factorialSumOfDigits(100);
+    double factorialDigitSumTime = stopwatch020.elapsedTime();
+    System.out.println("Problem #020");
+    System.out.println("============");
+    System.out.println("The factorial digit sum of 100! = " + factorialDigitSumOutput);
+    System.out.println(" with a time of " + factorialDigitSumTime + " milliseconds.\n ");
+
   }
 }
