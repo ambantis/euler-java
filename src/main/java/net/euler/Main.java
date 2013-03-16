@@ -94,7 +94,7 @@ public class Main {
 
     Stopwatch stopwatch009 = new Stopwatch();
     Problem009 problem009 = new Problem009();
-    int pythagoreanTripletOutput = problem009.tripletProduct();
+    int pythagoreanTripletOutput = problem009.tripletProduct(1000);
     double pythagoreanTripletTime = stopwatch009.elapsedTime();
     System.out.println("Problem #009");
     System.out.println("============");

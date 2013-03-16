@@ -14,33 +14,13 @@ public class Problem009 {
 
   public Problem009() {}
 
-  public int tripletProduct() {
-    for (int i = 1; i < 999; i++)
-      for (int j = 1; j < 999; j++)
-        for (int k = 1; k < 999; k++)
-          if (isSum1000(i,j,k) && isPythagoreanTriplet(i,j,k))
-            return i * j * k;
+  public int tripletProduct(int ceiling) {
+    for (int c = 1; c < ceiling - 2; c++)
+      for (int b = 1; b < ceiling - c; b++) {
+        int a = ceiling - b - c;
+          if (a*a + b*b == c*c)
+            return a * b * c;
+      }
     return 0;
-  }
-
-  private boolean isPythagoreanTriplet (int x, int y, int z) {
-    int a;
-    int b;
-    int c = Math.max(Math.max(x, y), y);
-    if (c == x) {
-      a = y;
-      b = z;
-    } else if (c == y) {
-      a = x;
-      b = z;
-    } else {
-      a = x;
-      b = y;
-    }
-    return a * a + b * b == c * c;
-  }
-
-  private boolean isSum1000(int x, int y, int z) {
-    return x + y + z == 1000;
   }
 }
