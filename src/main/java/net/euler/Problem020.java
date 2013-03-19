@@ -28,7 +28,7 @@ public class Problem020 {
     int sumOfDigits = 0;
     String factString = fact(n).toString();
     for (char c : factString.toCharArray()) {
-      sumOfDigits += Long.parseLong(Character.toString(c));
+      sumOfDigits += Integer.parseInt(Character.toString(c));
     }
     return sumOfDigits;
   }

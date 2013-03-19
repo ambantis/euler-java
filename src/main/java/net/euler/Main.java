@@ -200,5 +200,16 @@ public class Main {
     System.out.println("The factorial digit sum of 100! = " + factorialDigitSumOutput);
     System.out.println(" with a time of " + factorialDigitSumTime + " milliseconds.\n ");
 
+    Stopwatch stopwatch021 = new Stopwatch();
+    int n = 10000;
+    Problem021 problem021 = new Problem021();
+    long amicableSumOutput = problem021.amicablePairsTo(n);
+    double amicableSumTime = stopwatch021.elapsedTime();
+    System.out.println("Problem #021");
+    System.out.println("============");
+    System.out.println("The sum of all amicable numbers under " + n + " = " + amicableSumOutput);
+    System.out.println(" with a time of " + amicableSumTime + " milliseconds.\n ");
+
+
   }
 }
