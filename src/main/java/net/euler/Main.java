@@ -210,6 +210,22 @@ public class Main {
     System.out.println("The sum of all amicable numbers under " + n + " = " + amicableSumOutput);
     System.out.println(" with a time of " + amicableSumTime + " milliseconds.\n ");
 
+    Stopwatch stopwatch022a = new Stopwatch();
+    Problem022 problem022a = new Problem022();
+    long nameScoresQuickSortOutput = problem022a.runQuickSort("/problem022.txt");
+    double nameScoresQuickSortTime = stopwatch022a.elapsedTime();
+    System.out.println("Problem #022a");
+    System.out.println("============");
+    System.out.println("The sum of all name scores (using quick-sort) = " + nameScoresQuickSortOutput);
+    System.out.println(" with a time of " + nameScoresQuickSortTime + " milliseconds.\n ");
 
+    Stopwatch stopwatch022b = new Stopwatch();
+    Problem022 problem022b = new Problem022();
+    long nameScoresMergeSortOutput = problem022b.runRecursiveMergeSort("/problem022.txt");
+    double nameScoresMergeSortTime = stopwatch022b.elapsedTime();
+    System.out.println("Problem #022b");
+    System.out.println("============");
+    System.out.println("The sum of all name scores (using recursive merge-sort) = " + nameScoresMergeSortOutput);
+    System.out.println(" with a time of " + nameScoresMergeSortTime + " milliseconds.\n ");
   }
 }
