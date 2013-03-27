@@ -227,5 +227,14 @@ public class Main {
     System.out.println("============");
     System.out.println("The sum of all name scores (using recursive merge-sort) = " + nameScoresMergeSortOutput);
     System.out.println(" with a time of " + nameScoresMergeSortTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch023 = new Stopwatch();
+    Problem023 problem023 = new Problem023();
+    long sumNonAbundantOutput = problem023.sumOfNotAbundantSumNumbers();
+    double sumNonAbundantTime = stopwatch023.elapsedTime();
+    System.out.println("Problem #023");
+    System.out.println("============");
+    System.out.println("The count of all numbers that are not the sum of 2 abundant numbers =" + sumNonAbundantOutput);
+    System.out.println(" with a time of " + sumNonAbundantTime + " milliseconds.\n ");
   }
 }
