@@ -236,5 +236,19 @@ public class Main {
     System.out.println("============");
     System.out.println("The count of all numbers that are not the sum of 2 abundant numbers =" + sumNonAbundantOutput);
     System.out.println(" with a time of " + sumNonAbundantTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch024 = new Stopwatch();
+    int nth = 1000000;
+    String input = "0123456789";
+    Problem024 problem024 = new Problem024(input);
+    problem024.generatePermutations();
+    String lexiPermutationsOutput = problem024.getPermutation(nth-1);
+    double lexiPermutationsTime = stopwatch024.elapsedTime();
+    System.out.println("Problem #024");
+    System.out.println("============");
+    System.out.println("The " + nth + "th lexicographic permutation of '" + input + "' = " + lexiPermutationsOutput);
+    System.out.println(" with a time of " + lexiPermutationsTime + " milliseconds.\n ");
+
+
   }
 }
