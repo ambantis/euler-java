@@ -20,105 +20,88 @@ import java.util.List;
  */
 public class Problem024 {
 
-  List<Character> chars;
-  List<List<Character>> permutations;
+  List<Character> permutation;
+  List<String> permutations;
   StringBuilder sb;
-//  int limit;
 
   public Problem024(String s) {
     initChars(s);
-//    limit = nth;
-    permutations = new ArrayList<List<Character>>(fact(s.length()));
-    sb = new StringBuilder(chars.size());
+    permutations = new ArrayList<String>(fact(s.length()));
+    sb = new StringBuilder(permutation.size());
   }
 
   public void initChars(String s) {
-    chars = new ArrayList<Character>(s.length());
+    permutation = new ArrayList<Character>(s.length());
     char[] tmp = s.toCharArray();
     for (char c : tmp)
-      chars.add(c);
-    Collections.sort(chars);
+      permutation.add(c);
+    Collections.sort(permutation);
   }
 
+  public void generatePermutations() {
+    permutations.add(permutationToString());
+    while (hasNextPermutation())
+      permutations.add(nextPermutation());
+  }
 
-  public int getKey() {
-    int key = chars.size() - 1;
-    while (key > 0 && chars.get(key).compareTo(chars.get(key - 1)) <= 0)
+  public String getPermutation(int i) {
+    return (i < 0 || i > permutations.size()-1) ? "" : permutations.get(i);
+  }
+
+  public int getNumberPermutations() throws IllegalArgumentException {
+    if (permutations.isEmpty())
+      throw new IllegalArgumentException("Error: No permutations generated yet.");
+    return permutations.size();
+  }
+
+  private int getKey() {
+    int key = permutation.size() - 1;
+    while (key > 0 && permutation.get(key).compareTo(permutation.get(key - 1)) <= 0)
       key--;
     return --key;
   }
 
-  public int getNewKey(int key) {
-    int newKey = chars.size()-1;
-    while (newKey > key && chars.get(newKey).compareTo(chars.get(key)) <= 0)
+  private int getNewKey(int key) {
+    int newKey = permutation.size()-1;
+    while (newKey > key && permutation.get(newKey).compareTo(permutation.get(key)) <= 0)
       newKey--;
     return newKey;
   }
 
-  public void reverseSortTail(int key) {
-    List<Character> left = new ArrayList<Character>(chars.subList(0, key + 1));
-    List<Character> right = new ArrayList<Character>(chars.subList(key+1,chars.size()));
+  private void reverseSortTail(int key) {
+    List<Character> left = new ArrayList<Character>(permutation.subList(0, key + 1));
+    List<Character> right = new ArrayList<Character>(permutation.subList(key+1, permutation.size()));
     Collections.reverse(right);
     Collections.addAll(left, right.toArray(new Character[right.size()]));
-    chars = new ArrayList<Character>(left);
+    permutation = new ArrayList<Character>(left);
   }
 
-  public boolean hasNextPermutation() {
+  private boolean hasNextPermutation() {
     return getKey() > -1;
   }
 
-  public List<Character> nextPermutation() {
+  private String nextPermutation() {
     int key = getKey();
     if (key < 0)
       return null;
     int newKey = getNewKey(key);
-    Collections.swap(chars, key, newKey);
+    Collections.swap(permutation, key, newKey);
     reverseSortTail(key);
-    return new ArrayList<Character>(chars);
+    return permutationToString();
   }
 
-  public void generatePermutations() {
-    permutations.add(new ArrayList<Character>(chars));
-    while (hasNextPermutation())
-      permutations.add(nextPermutation());
-//    for (int i = 1; i < limit && hasNextPermutation(); i++) {
-//      nextPermutation();
-//      temp = new ArrayList<Character>(chars);
-//      permutations.add(temp);
-//    }
-//    while (hasNextPermutation()) {
-//      nextPermutation();
-//      temp = new ArrayList<Character>(chars);
-//      if (convertPermutation(permutations.get(limit-1)).compareTo(convertPermutation(temp)) > 0)
-//        permutations.set(limit-1,(temp));
-//    }
-  }
-
-  public String getPermutation(int i) {
-    return (i < 0 || i > permutations.size()-1) ? "" : convertPermutation(permutations.get(i));
-  }
-
-  public int fact(int n) {
+  private int fact(int n) {
     int fact = 1;
     for (int i = 1; i < n+1; i++)
       fact *= i;
     return fact;
   }
 
-  public String convertPermutation(List<Character> cl) {
+  private String permutationToString() {
     sb.delete(0,sb.length());
-    for (Character c : cl)
+    for (Character c : permutation)
       sb.append(c);
     return sb.toString();
-  }
-
-
-  public int getNumberPermutations() {
-    return permutations.size();
-  }
-
-  public List<Character> getChars() {
-    return chars;
   }
 
 }

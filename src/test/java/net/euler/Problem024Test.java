@@ -28,19 +28,6 @@ public class Problem024Test {
   }
 
   @Test
-  public void test123NextPermutation() {
-    String input = "123";
-    Problem024 problem024 = new Problem024(input);
-    List<Character> expected = new ArrayList<Character>(3);
-    expected.add('1');
-    expected.add('3');
-    expected.add('2');
-    problem024.nextPermutation();
-    List<Character> actual = problem024.getChars();
-    assertEquals("failure - should equal [1,3,2]", expected, actual);
-  }
-
-  @Test
   public void test123Permutation3() {
     String input = "012";
     Problem024 problem024 = new Problem024(input);
@@ -57,7 +44,7 @@ public class Problem024Test {
     Problem024 problem024 = new Problem024(input);
     problem024.generatePermutations();
     int actual = problem024.getNumberPermutations();
-    assertEquals("failure - should equal 6", expected, actual);
+    assertEquals("failure - should equal " + expected, expected, actual);
   }
 
   @Test
@@ -67,17 +54,17 @@ public class Problem024Test {
     Problem024 problem024 = new Problem024(input);
     problem024.generatePermutations();
     int actual = problem024.getNumberPermutations();
-    assertEquals("failure - should equal 6", expected, actual);
+    assertEquals("failure - should equal " + expected, expected, actual);
   }
 
   @Test
-  public void test123456Permutation0() {
+  public void test123456Permutation1() {
     String input = "0123456";
     Problem024 problem024 = new Problem024(input);
     String expected = "0123465";
     problem024.generatePermutations();
     String actual = problem024.getPermutation(1);
-    assertEquals("failure - should equal '0123465'", expected, actual);
+    assertEquals("failure - should equal " + expected, expected, actual);
   }
 
 
@@ -88,7 +75,7 @@ public class Problem024Test {
     Problem024 problem024 = new Problem024(input);
     problem024.generatePermutations();
     int actual = problem024.getNumberPermutations();
-    assertEquals("failure - should equal 6", expected, actual);
+    assertEquals("failure - should equal " + expected, expected, actual);
   }
   @Test
   public void testNumberOfPermutationsLen9() {
@@ -97,7 +84,14 @@ public class Problem024Test {
     Problem024 problem024 = new Problem024(input);
     problem024.generatePermutations();
     int actual = problem024.getNumberPermutations();
-    assertEquals("failure - should equal 6", expected, actual);
+    assertEquals("failure - should equal " + expected, expected, actual);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testPermutationsIllegalArgumentException() {
+    String input = "01234";
+    Problem024 problem024 = new Problem024(input);
+    problem024.getNumberPermutations();
   }
 
 }
