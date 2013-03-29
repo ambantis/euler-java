@@ -249,6 +249,15 @@ public class Main {
     System.out.println("The " + nth + "th lexicographic permutation of '" + input + "' = " + lexiPermutationsOutput);
     System.out.println(" with a time of " + lexiPermutationsTime + " milliseconds.\n ");
 
+    Stopwatch stopwatch025 = new Stopwatch();
+    int thousandDigits = 1000;
+    Problem025 problem025 = new Problem025();
+    int fiboNthOutput = problem025.calcFirstFiboWith(thousandDigits);
+    double fiboNthTime = stopwatch025.elapsedTime();
+    System.out.println("Problem #025");
+    System.out.println("============");
+    System.out.println("The nth Fibo number with " + thousandDigits + " = " + fiboNthOutput);
+    System.out.println(" with a time of " + lexiPermutationsTime + " milliseconds.\n ");
 
   }
 }
