@@ -257,7 +257,15 @@ public class Main {
     System.out.println("Problem #025");
     System.out.println("============");
     System.out.println("The nth Fibo number with " + thousandDigits + " = " + fiboNthOutput);
-    System.out.println(" with a time of " + lexiPermutationsTime + " milliseconds.\n ");
+    System.out.println(" with a time of " + fiboNthTime + " milliseconds.\n ");
 
+    Stopwatch stopwatch026 = new Stopwatch();
+    Problem026 problem026 = new Problem026();
+    int greatestCycleOutput = problem026.calcMaxCycle();
+    double greatestCycleTime = stopwatch026.elapsedTime();
+    System.out.println("Problem #026");
+    System.out.println("============");
+    System.out.println("The greatest cycle = " + greatestCycleOutput);
+    System.out.println(" with a time of " + greatestCycleTime + " milliseconds.\n ");
   }
 }
