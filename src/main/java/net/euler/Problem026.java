@@ -27,34 +27,113 @@ package net.euler;
  * Time: 7:58 PM
  */
 public class Problem026 {
+  int numerator;
+  private int denominator;
+  private Integer quotient;
+  private int modulo;
+  private int patternMod;
+  private StringBuilder cumQuot;
+  private StringBuilder pattern;
 
-  public int calcMaxCycle() {
-    int maxUnit = 0;
-    int maxLen = 0;
-    int currLen = 0;
-    for (int i = 2; i < 1000; i++) {
-      currLen = getCycleLength(i);
-      System.out.println("i=" + i + "; len=" + currLen);
-      if (currLen > maxLen) {
-        maxUnit = i;
-        maxLen = currLen;
+  public Problem026() {
+    numerator = 1;
+    cumQuot = new StringBuilder();
+    pattern = new StringBuilder();
+  }
+
+  public int calcMaxPatternTo(int ceiling) {
+    Integer maxPatternLength = 0;
+    Integer maxPatternAt = 0;
+    int currentPatternLength;
+    for (int i = 2; i < ceiling; i++) {
+      currentPatternLength = calcPatternLength(i);
+      if (currentPatternLength > maxPatternLength) {
+        maxPatternLength = currentPatternLength;
+        maxPatternAt = i;
       }
     }
-    return maxUnit;
+    return maxPatternAt;
   }
 
-  public int getCycleLength(int denominator) {
-    int digits = 1;
-    int numerator = 1;
-    int modulo;
-    while (true) {
-      numerator *= 10;
-      modulo = numerator % denominator;
-      if (modulo == 0 || modulo == 1)
-        break;
-      numerator = modulo;
-      digits++;
+  /**
+   * calcPatternLength
+   *
+   * calculates the length of the repeating decimal pattern of a given unit
+   * decimal.
+   *
+   * @param next the next unit decimal's denominator
+   * @return returns 0 if unit fraction is terminating
+   *         otherwise the length of the repeating decimal
+   */
+  public int calcPatternLength(int next) {
+    clearCumQuot();
+    clearPattern();
+    numerator = 1;
+    denominator = next;
+    modulo = 1;
+    while (hasMoreDigits()) {
+      nextDigit();
+      if (patternIsComplete())
+        return pattern.length();
+      addDigitToPattern();
+      if (!patternExists())
+        clearPattern();
+      addDigitToCumQUot();
     }
-    return digits;
+    return 0;
   }
+
+  /**
+   * patternExists
+   *
+   * Evaluates whether quotient pattern exists within cumQuot
+   * @return true if the decimal pattern exists within the cumulative quotient
+   */
+  private boolean patternExists() {
+    return pattern.length() > 0 &&
+        cumQuot.indexOf(pattern.toString()) > -1;
+  }
+
+  /**
+   * patternIsComplete
+   *
+   * Evaluates whether a complete pattern has been proven to exist
+   * @return true if there is a pattern, which exists within the cumulative
+   *              quotient and the modulo at the beginning of the pattern
+   *              matches the modulo one digit past the end of the pattern.
+   */
+  private boolean patternIsComplete() {
+    return pattern.length() > 0 &&
+        cumQuot.indexOf(pattern.toString()) > -1 &&
+        modulo == patternMod;
+  }
+
+  private boolean hasMoreDigits() {
+    return modulo > 0;
+  }
+
+  private void nextDigit() {
+    numerator = modulo * 10;
+    quotient = numerator / denominator;
+    modulo = numerator % denominator;
+  }
+
+  private void addDigitToPattern() {
+    if (pattern.length() == 0)
+      patternMod = modulo;
+    pattern.append(quotient);
+  }
+
+  private void addDigitToCumQUot() {
+    cumQuot.append(quotient);
+  }
+
+  private void clearPattern() {
+    pattern.setLength(0);
+  }
+
+  private void clearCumQuot() {
+    cumQuot.setLength(0);
+  }
+
 }

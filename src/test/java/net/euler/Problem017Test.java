@@ -56,14 +56,4 @@ public class Problem017Test {
     assertEquals("failure - " + number + " should have length of " + expected, expected, actual);
   }
 
-//  @Test
-//  public void testNumberLetterCounts() {
-//    int ceiling = 5;
-//    int expected = 19;
-//    Problem017 problem017 = new Problem017();
-//    int actual = problem017.numberLetterCountsTo(ceiling);
-//    assertEquals("failure = should equal " + expected, expected, actual);
-//  }
-
-
 }

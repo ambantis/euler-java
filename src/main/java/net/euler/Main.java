@@ -260,12 +260,13 @@ public class Main {
     System.out.println(" with a time of " + fiboNthTime + " milliseconds.\n ");
 
     Stopwatch stopwatch026 = new Stopwatch();
+    int maxDenominator = 999;
     Problem026 problem026 = new Problem026();
-    int greatestCycleOutput = problem026.calcMaxCycle();
-    double greatestCycleTime = stopwatch026.elapsedTime();
+    int greatestPatternOutput = problem026.calcMaxPatternTo(maxDenominator+1);
+    double greatestPatternTime = stopwatch026.elapsedTime();
     System.out.println("Problem #026");
     System.out.println("============");
-    System.out.println("The greatest cycle = " + greatestCycleOutput);
-    System.out.println(" with a time of " + greatestCycleTime + " milliseconds.\n ");
+    System.out.println("The greatest pattern length with denominator = " + greatestPatternOutput);
+    System.out.println(" with a time of " + greatestPatternTime + " milliseconds.\n ");
   }
 }
