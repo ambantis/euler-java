@@ -103,7 +103,7 @@ public class Main {
     System.out.println(" with a time of " + pythagoreanTripletTime + " milliseconds.\n ");
 
     Stopwatch stopwatch010 = new Stopwatch();
-    int ceiling = 2000000;
+      int ceiling = 2000000;
     Problem010 problem010 = new Problem010(ceiling);
     long primeSumOutput = problem010.sumPrimes();
     double primeSumTime = stopwatch010.elapsedTime();
@@ -268,5 +268,20 @@ public class Main {
     System.out.println("============");
     System.out.println("The greatest pattern length with denominator = " + greatestPatternOutput);
     System.out.println(" with a time of " + greatestPatternTime + " milliseconds.\n ");
+
+    Stopwatch stopwatch027 = new Stopwatch();
+    int floor = -999;
+    ceiling = 999;
+    Problem027 problem027 = new Problem027(floor, ceiling);
+    int greatestCoefficientOutput = problem027.calcMaxCombo();
+    double greatestCoefficientTime = stopwatch027.elapsedTime();
+    System.out.println("Problem #027");
+    System.out.println("============");
+    System.out.println("The coefficient for the max quadratic prime = " + greatestCoefficientOutput);
+    System.out.println(" with a time of " + greatestCoefficientTime + " milliseconds.\n ");
+
+
+
+
   }
 }

@@ -24,7 +24,9 @@ public class Problem007 {
     return prime;
   }
 
-  private boolean isPrime(long n) {
+  public boolean isPrime(long n) {
+    if (n < 2)
+      return false;
     long ceiling = roughRoot(n);
     for (long i = 2; i < ceiling + 1; i++)
       if (n % i == 0)
