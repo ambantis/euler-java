@@ -280,6 +280,16 @@ public class Main {
     System.out.println("The coefficient for the max quadratic prime = " + greatestCoefficientOutput);
     System.out.println(" with a time of " + greatestCoefficientTime + " milliseconds.\n ");
 
+    Stopwatch stopwatch028 = new Stopwatch();
+    int length = 1001;
+    Problem028 problem028 = new Problem028();
+    int spiralDiagonalsOutput = problem028.calcDiagonals(length);
+    double spiralDiagonalTime = stopwatch028.elapsedTime();
+    System.out.println("Problem #028");
+    System.out.println("============");
+    System.out.println("The sum of diagonals for a spiral of " + length + " by " + length + " = " +
+        spiralDiagonalsOutput);
+    System.out.println(" with a time of " + spiralDiagonalTime + " milliseconds.\n ");
 
 
 
