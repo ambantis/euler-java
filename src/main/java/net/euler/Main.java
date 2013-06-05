@@ -299,5 +299,15 @@ public class Main {
     System.out.println("============");
     System.out.println("The sum of Pandigital products (1-9) is " + sumOfPandigitalsOutput);
     System.out.println(" with a time of " + pandigitalTime + " milliseconds.\n");
+
+    Stopwatch stopwatch037 = new Stopwatch();
+    Problem037 problem037 = new Problem037();
+    int truncatablePrimesOutput = problem037.getTruncatablePrimeSum();
+    double truncatablePrimesTime = stopwatch037.elapsedTime();
+    System.out.println("Problem #037");
+    System.out.println("============");
+    System.out.println("The sum of truncatable primes is " + truncatablePrimesOutput);
+    System.out.println(" with a time of " + truncatablePrimesTime + " milliseconds.\n");
+
   }
 }

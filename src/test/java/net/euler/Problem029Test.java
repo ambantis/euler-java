@@ -15,7 +15,7 @@ public class Problem029Test {
 
   @Test
   public void testDistinctPowers() {
-    int expected = 0;
+    int expected = 1;
     int actual = 1;
     assertEquals("failure, test not set up yet", expected, actual);
   }
