@@ -309,5 +309,16 @@ public class Main {
     System.out.println("The sum of truncatable primes is " + truncatablePrimesOutput);
     System.out.println(" with a time of " + truncatablePrimesTime + " milliseconds.\n");
 
+    Stopwatch stopwatch039 = new Stopwatch();
+    Problem039 problem039 = new Problem039(1001);
+    problem039.populatePrimitiveTriples();
+    problem039.populateSolutions();
+    int integralTrianglesOutput = problem039.getMaxSolutions();
+    double integralTriangleTime = stopwatch039.elapsedTime();
+    System.out.println("Problem #039");
+    System.out.println("============");
+    System.out.println("The max solution for integralTriangles is " + integralTrianglesOutput);
+    System.out.println(" with a time of " + integralTriangleTime + " milliseconds.\n");
+
   }
 }
